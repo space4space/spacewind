@@ -1,0 +1,25 @@
+{
+    "name": "spacewind/libs",
+    "description": "Spacewind libraries",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Shlyakhov",
+            "email": "shuricken@gmail.com"
+        }
+    ],
+    "repositories": [
+    ],
+    "require": {
+        "mustache/mustache": "^2.9",
+        "illuminate/database": "*.*",
+        "illuminate/events": "*.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spacewind\\": "src/Spacewind"
+        }
+    }
+    
+}
