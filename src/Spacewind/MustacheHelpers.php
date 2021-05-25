@@ -79,40 +79,44 @@ class MustacheHelpers
         };
 
         $this->helpers['css-min-link'] = function ($array) {
-            global $path;
+            if (!empty($array)){
+                global $path;
 
-            if (isset($array[0])) {
-                $value = $path['assets'].'/'.$array[0];
-            } else {
-                $value = '';
-            }
+                if (isset($array[0])) {
+                    $value = $path['assets'].'/'.$array[0];
+                } else {
+                    $value = '';
+                }
 
-            for ($i = 1; $i < sizeof($array); ++$i) {
-                $value = $value.','.$path['assets'].'/'.$array[$i];
-            }
-            if ($value != '') {
-                return '<link rel="stylesheet" href="'.$path['assets'].'/min'.$value.'" />';
-            } else {
-                return '';
-            }
+                for ($i = 1; $i < sizeof($array); ++$i) {
+                    $value = $value.','.$path['assets'].'/'.$array[$i];
+                }
+                if ($value != '') {
+                    return '<link rel="stylesheet" href="'.$path['assets'].'/min'.$value.'" />';
+                } else {
+                    return '';
+                }
+            }            
         };
 
         $this->helpers['js-min-link'] = function ($array) {
-            global $path;
+            if (!empty($array)){
+                global $path;
 
-            if (isset($array[0])) {
-                $value = $path['assets'].'/'.$array[0];
-            } else {
-                $value = '';
-            }
+                if (isset($array[0])) {
+                    $value = $path['assets'].'/'.$array[0];
+                } else {
+                    $value = '';
+                }
 
-            for ($i = 1; $i < sizeof($array); ++$i) {
-                $value = $value.','.$path['assets'].'/'.$array[$i];
-            }
-            if ($value != '') {
-                return '<script src="'.$path['assets'].'/min'.$value.'"></script>';
-            } else {
-                return '';
+                for ($i = 1; $i < sizeof($array); ++$i) {
+                    $value = $value.','.$path['assets'].'/'.$array[$i];
+                }
+                if ($value != '') {
+                    return '<script src="'.$path['assets'].'/min'.$value.'"></script>';
+                } else {
+                    return '';
+                }
             }
         };
 
