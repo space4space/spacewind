@@ -5,7 +5,7 @@ namespace Spacewind\Models;
 use Illuminate\Database\Eloquent\Model;
 use Spacewind\Traits\Logged;
 
-abstract class UploadType extends Model
+class UploadType extends Model
 {
     use Logged;
 

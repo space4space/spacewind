@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spacewind\Traits\Logged;
 
-abstract class Upload extends Model
+class Upload extends Model
 {
     use SoftDeletes;
     use Logged;
@@ -17,7 +17,7 @@ abstract class Upload extends Model
 
     public function type()
     {
-        return $this->belongsTo('UploadType', 'content_type', 'name')->withDefault(function ($upload_type) {
+        return $this->belongsTo('Spacewind\Models\UploadType', 'content_type', 'name')->withDefault(function ($upload_type) {
             $upload_type->icon = 'fa fa-file-o';
         });
     }
