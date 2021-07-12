@@ -136,7 +136,7 @@ class MustacheHelpers
 
         $this->helpers['form-by-name'] = function ($value) {
             global $path;
-            $loader = new Mustache_Loader_FilesystemLoader($path['views'].'/pages/partials/_shared/forms');
+            $loader = new \Mustache_Loader_FilesystemLoader($path['views'].'/pages/partials/_shared/forms');
 
             if (isset($value['name'])) {
                 $tpl = $loader->load($value['name']);
